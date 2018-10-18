@@ -13,12 +13,26 @@ gulp.task("default", function() {
 
 var browserSync = require('browser-sync').create();
 
-// Static server
-gulp.task('browser-sync', function() {
+gulp.task("browser-sync", function() {
     browserSync.init({
-        server: {
-            baseDir: "./"
-        }
+      server: {
+        baseDir: "./"
+      }
     });
+
+    gulp
+      .watch(['index.html', 'build/css/*.css', 'build/js/*.js'])
+      .on('change', browserSync.reload);
+  });
+
+
+  const eslint = require('gulp-eslint');
+
+gulp.task('lint', function() {
+   return gulp.src("./js/*.js")
+
+       .pipe(eslint())
+       .pipe(eslint.format())
+       .pipe(eslint.failAfterError());
 });
 

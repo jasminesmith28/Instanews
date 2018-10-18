@@ -10,8 +10,12 @@
   "license": "ISC",
   "devDependencies": {
     "browser-sync": "^2.26.3",
+    "eslint": "^5.7.0",
     "gulp": "^4.0.0",
     "gulp-rename": "^1.4.0",
     "gulp-uglify": "^3.0.1"
+  },
+  "dependencies": {
+    "gulp-eslint": "^5.0.0"
   }
 }
