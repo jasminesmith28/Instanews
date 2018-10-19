@@ -1,15 +1,12 @@
-const gulp =require('gulp');
-
-const uglify = require("gulp-uglify"),
-  rename = require("gulp-rename");
-
-gulp.task("default", function() {
-  return gulp
-    .src("./js/*.js") 
-    .pipe(uglify()) 
-    .pipe(rename({ extname: ".min.js" }))
-    .pipe(gulp.dest("./build/js")); 
-});
+const gulp = require('gulp'),
+  prettyError = require('gulp-prettyerror'),
+  sass = require('gulp-sass'),
+  autoprefixer = require('gulp-autoprefixer'),
+  rename = require('gulp-rename'),
+  cssnano = require('gulp-cssnano'),
+  uglify = require('gulp-uglify'),
+  eslint = require('gulp-eslint'),
+  browserSync = require('browser-sync');
 
 var browserSync = require('browser-sync').create();
 
@@ -25,9 +22,6 @@ gulp.task("browser-sync", function() {
       .on('change', browserSync.reload);
   });
 
-
-  const eslint = require('gulp-eslint');
-
 gulp.task('lint', function() {
    return gulp.src("./js/*.js")
 
@@ -35,3 +29,27 @@ gulp.task('lint', function() {
        .pipe(eslint.format())
        .pipe(eslint.failAfterError());
 });
+
+gulp.task("sass", function() {
+    return gulp
+      .src("./sass/style.scss")
+      .pipe(sass())
+      .pipe(
+        autoprefixer({
+          browsers: ["last 2 versions"]
+        })
+      )
+      .pipe(gulp.dest("./build/css"))
+      .pipe(cssnano())
+      .pipe(rename("style.min.css"))
+      .pipe(gulp.dest("./build/css"));
+  });
+
+  gulp.task("default", function() {
+    return gulp
+      .src("./js/*.js") 
+      .pipe(uglify()) 
+      .pipe(rename({ extname: ".min.js" }))
+      .pipe(gulp.dest("./build/js")); 
+  });
+  
