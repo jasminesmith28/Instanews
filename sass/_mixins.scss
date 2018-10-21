@@ -1,15 +1,19 @@
-@mixin text($color, $size, $font-family){
+@mixin tablet {
+    @media (min-width: $tablet-width){
+        @content;
+    }
+}
+
+@mixin desktop {
+    @media (min-width: $desktop-width){
+        @content;
+    } 
+}
+
+@mixin font($color, $size, $font-family){
     color: $color;
     font-size: $size;
     font-family: $font-type;
 }
 
-p{
-    @include text($main-color, 16px, $font-type);
-}
 
-footer {
-    p{
-        @include text($footer-color, 16px, $font-type)
-    }
-}

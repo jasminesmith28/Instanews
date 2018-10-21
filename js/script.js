@@ -11,9 +11,13 @@ $.ajax({
   console.log(data.results[0].abstract);
   const abstract = data.results[0].abstract;
   console.log(data.results[0].multimedia[0]);
-  const image = data.results[0].multimedia[0];
+  // const image = data.results[0].multimedia[0];
   console.log(data.results[0].url);
-  const url = data.results[0].url;
+  // const url = data.results[0].url;
+}).done(function(data) {
+  $()
+}
+
 }).fail(function(err) {
   throw err;
 });

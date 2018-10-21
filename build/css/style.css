@@ -304,15 +304,28 @@ template {
 body {
   background-color: black; }
 
-p {
-  color: #ffffff;
-  font-size: 16px;
-  font-family: "Open Sans"; }
+header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center; }
 
-footer p {
-  color: #c2c2c2;
-  font-size: 16px;
-  font-family: "Open Sans"; }
+select {
+  background-color: #ffffff; }
+
+footer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center; }
 
 @font-face {
   font-family: 'Open Sans';
