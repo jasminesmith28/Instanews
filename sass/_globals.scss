@@ -2,32 +2,51 @@ body{
     background-color: black;
 }
 
-// p{
-//     @include font($main-color, 16px, $font-type);
-// }
+p{
+    @include font($main-color, 16px, $font-type);
+}
 
 header{
+
     display: flex;
     flex-direction: column;
     align-items: center;
+    padding: 20%;
+
+    @include desktop{
+    
+    }
     }
 
     .logo{
-        height: 20px;
-    }
-
+        height: 150px;
+        width: 150px;
+    
 }
 
 select{
     background-color: #ffffff;
 }
 
+.articleimage{
+    width:100%;
+    height:200px;
+}
+
+h2{
+    @include font($main-color, 16px, $font-type);
+}
+
+.description{
+
+}
 
 footer {
     display: flex;
     justify-content: center;
+    align-items: flex-end;
 
-    // p{
-    //     @include font($footer-color, 16px, $font-type);
-    // }
+    p{
+        @include font($footer-color, 16px, $font-type);
+    }
 }
