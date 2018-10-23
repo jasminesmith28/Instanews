@@ -18,7 +18,7 @@ $.ajax({
   var url = data.results[0].url;
   console.log(url);
   
-  $('.abstract').append('<a href="'+url+'"class="link"><img src="'+image+'" class="articleimage"><h1 class="description">'+abstract+'</h2></a>');
+  $('.articleone').append('<section><a href="'+url+'"class="link"><img src="'+image+'" class="articleimage"><h2 class="description">'+abstract+'</h2></a></section>');
 }
 
 }).fail(function(err) {
