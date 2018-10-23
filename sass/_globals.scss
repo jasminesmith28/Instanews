@@ -30,6 +30,11 @@ select{
 
 .articleimage{
     width:100%;
+
+    @include tablet{
+        height: 250px;
+        
+    }
 }
 
 .article_section{
@@ -66,6 +71,30 @@ section{
     @include font($main-color, 12px, $font-type);
     font-weight: 100;
 }
+
+.reduce{
+    animation: shrink 2s ease 1 both;
+    @include tablet{animation: shrink-tablet 1 both}
+    @include desktop{animation: shrink-desktop 1 both}
+    
+}
+
+@keyframes shrink{
+    0%{transform:translate(0px, 0px) scale(1);}
+    100%{transform: translate(-100px, -140px,) scale(0.5);}
+}
+
+.shift{
+    animation:  1.5s both;
+    @include tablet {animation: body-move-mobile 1.5s both;}
+    @include desktop {animation: body-move 1.5s both;}
+ }
+
+@keyframes slide{
+    0%{transform:translateY(0px);}
+    100%{transform: translateY(-600px);}
+}
+
 
 footer {
     display: flex;

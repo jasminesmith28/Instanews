@@ -359,6 +359,9 @@ select {
 
 .articleimage {
   width: 100%; }
+  @media (min-width: 600px) {
+    .articleimage {
+      height: 250px; } }
 
 .article_section {
   display: -webkit-box;
@@ -397,6 +400,62 @@ section {
   font-size: 12px;
   font-family: "Open Sans";
   font-weight: 100; }
+
+.reduce {
+  -webkit-animation: shrink 2s ease 1 both;
+          animation: shrink 2s ease 1 both; }
+  @media (min-width: 600px) {
+    .reduce {
+      -webkit-animation: shrink-tablet 1 both;
+              animation: shrink-tablet 1 both; } }
+  @media (min-width: 1240px) {
+    .reduce {
+      -webkit-animation: shrink-desktop 1 both;
+              animation: shrink-desktop 1 both; } }
+
+@-webkit-keyframes shrink {
+  0% {
+    -webkit-transform: translate(0px, 0px) scale(1);
+            transform: translate(0px, 0px) scale(1); }
+  100% {
+    -webkit-transform: translate(-100px, -140px) scale(0.5);
+            transform: translate(-100px, -140px) scale(0.5); } }
+
+@keyframes shrink {
+  0% {
+    -webkit-transform: translate(0px, 0px) scale(1);
+            transform: translate(0px, 0px) scale(1); }
+  100% {
+    -webkit-transform: translate(-100px, -140px) scale(0.5);
+            transform: translate(-100px, -140px) scale(0.5); } }
+
+.shift {
+  -webkit-animation: 1.5s both;
+          animation: 1.5s both; }
+  @media (min-width: 600px) {
+    .shift {
+      -webkit-animation: body-move-mobile 1.5s both;
+              animation: body-move-mobile 1.5s both; } }
+  @media (min-width: 1240px) {
+    .shift {
+      -webkit-animation: body-move 1.5s both;
+              animation: body-move 1.5s both; } }
+
+@-webkit-keyframes slide {
+  0% {
+    -webkit-transform: translateY(0px);
+            transform: translateY(0px); }
+  100% {
+    -webkit-transform: translateY(-600px);
+            transform: translateY(-600px); } }
+
+@keyframes slide {
+  0% {
+    -webkit-transform: translateY(0px);
+            transform: translateY(0px); }
+  100% {
+    -webkit-transform: translateY(-600px);
+            transform: translateY(-600px); } }
 
 footer {
   display: -webkit-box;
