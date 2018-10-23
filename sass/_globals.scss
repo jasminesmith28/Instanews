@@ -7,21 +7,49 @@ p{
 }
 
 header{
-
     display: flex;
     flex-direction: column;
     align-items: center;
     padding: 20%;
+    height: 300px;
+
+    @include tablet{
+    flex-direction: row;
+    padding: 10%;
+    }
 
     @include desktop{
-    
-    }
+    flex-direction: row;
+    align-items: center;
+    padding: 10% 0 12% 2%;
     }
 
     .logo{
         height: 150px;
         width: 150px;
-    
+
+    @include tablet{
+        height: 150px;
+        width: 150px;
+    }
+
+    @include desktop{
+        height: 250px;
+        width: 250px;
+    }
+    }   
+}
+
+.selection{
+
+    @include tablet{
+        display: flex;
+        flex-direction: column;
+    }
+
+    @include desktop{
+        padding-left: 4%;
+    }
 }
 
 select{
@@ -73,35 +101,59 @@ section{
 }
 
 .reduce{
-    animation: shrink 2s ease 1 both;
+    animation: shrink-mobile 2s ease-in 1 both;
     @include tablet{animation: shrink-tablet 1 both}
     @include desktop{animation: shrink-desktop 1 both}
-    
 }
 
-@keyframes shrink{
+@keyframes shrink-mobile{
+    0%{transform:translateY(0px) scale(1);}
+    100%{transform: translateY(100px) scale(0.9);}
+}
+
+@keyframes shrink-tablet{
+    0%{transform:translateY(0px) scale(1);}
+    100%{transform: translate(-40px) scale(0.7);}
+}
+
+@keyframes shrink-desktop{
     0%{transform:translate(0px, 0px) scale(1);}
-    100%{transform: translate(-100px, -140px,) scale(0.5);}
+    100%{transform: translate(-100px, -140px) scale(0.5);}
 }
 
 .shift{
-    animation:  1.5s both;
-    @include tablet {animation: body-move-mobile 1.5s both;}
-    @include desktop {animation: body-move 1.5s both;}
+    animation: shift-mobile 2s both;
+    @include tablet {animation: shift-tablet 2s both;}
+    @include desktop {animation: shift-desktop 2s both;}
  }
 
-@keyframes slide{
+@keyframes shift-mobile{
+    0%{transform:translateY(0);}
+    100%{transform: translateY(-100px);}
+}
+
+@keyframes shift-tablet{
+    0%{transform:translateY(0px);}
+    100%{transform: translateY(-10px);}
+}
+
+@keyframes shift-desktop{
     0%{transform:translateY(0px);}
     100%{transform: translateY(-600px);}
 }
 
-
 footer {
     display: flex;
     justify-content: center;
-    align-items: flex-end;
+
+    @include desktop{
+        justify-content: flex-start;
+        padding-left: 2%;
+    }
 
     p{
         @include font($footer-color, 16px, $font-type);
+        display: flex;
+        align-self: flex-end;
     }
 }
