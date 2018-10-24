@@ -43,7 +43,11 @@ header{
     }   
 }
 
+select{
+    background-color: white;
+}
 .selection{
+    @include font($main-color, 14px, $font-type);
 
     @include tablet{
         display: flex;
@@ -123,18 +127,39 @@ section{
 }
 
 @keyframes shrinkmobile{
-    0% {transform: translateY(0px) translateX(0px) scale(1);}
-    100%{transform: translateY(70px) scale(0.9);}
+    0% {transform: translate(0px) scale(1);}
+    100%{transform: translateY(120px) scale(0.9);}
 }
 
 @keyframes shrinktablet{
-    0% {transform: translateY(0px) translateX(0px) scale(1);}
-    100%{transform:translateY(220px) scale(0.7);}
+    0% {transform: translate(0px) scale(1);}
+    100%{transform:translateY(250px) scale(0.4);}
 }
 
 @keyframes shrinkdesktop{
     0% {transform: translateY(0px) translateX(0px) scale(1);}
-    100%{transform: translateY(210px) translateX(-300px) scale(0.6);}
+    100%{transform: translateY(220px) translateX(-60px) scale(0.5);}
+}
+
+.slide{
+    animation: slidemobile 1.5s ease-in both;
+    @include tablet {animation: slidetablet 1.5s both;}
+    @include desktop {animation: slidedesktop 1.5s both;}
+}
+
+@keyframes slidemobile{
+    0% {transform: translateY(0px) translateX(0px);}
+    100%{transform: translateY(100px);}
+}
+
+@keyframes slidetablet{
+    0% {transform: translate(0px);}
+    100%{transform:translateY(250px) translateX(-40px) scale(0.9);}
+}
+
+@keyframes slidedesktop{
+    0% {transform: translate(0px) scale(1);}
+    100%{transform: translateY(220px) translateX(-170px) scale(0.9);}
 }
 
 .shift{
@@ -144,11 +169,13 @@ section{
  }
 
 @keyframes shift-mobile{
-    100%{transform: translateY(-200px);}
+    0% {transform: translate(0px);}
+    100%{transform: translateY(-150px);}
 }
 
 @keyframes shift-tablet{
-    100%{transform: translateY(-450px);}
+    0% {transform: translate(0px);}
+    100%{transform: translateY(-500px);}
 }
 
 @keyframes shift-desktop{

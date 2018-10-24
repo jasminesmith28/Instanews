@@ -8,7 +8,8 @@
         'api-key': "82f12f3e4189492f86578cb2d4e6add0"
     });
   
-$('header').toggleClass("reduce");
+$('.logo').toggleClass("reduce");
+$('.selection').toggleClass("slide");
 $('body').toggleClass("shift");
 
 $.ajax({
