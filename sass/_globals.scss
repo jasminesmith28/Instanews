@@ -1,5 +1,6 @@
 body{
     background-color: black;
+    height: 100vh;
 }
 
 p{
@@ -10,18 +11,19 @@ header{
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 20%;
-    height: 300px;
+    justify-content: center;
+    text-align: center;
+    height: 100%;
+    width: 100%;
 
     @include tablet{
     flex-direction: row;
-    padding: 10%;
     }
 
     @include desktop{
     flex-direction: row;
+    justify-content: flex-start;
     align-items: center;
-    padding: 10% 0 12% 2%;
     }
 
     .logo{
@@ -29,8 +31,9 @@ header{
         width: 150px;
 
     @include tablet{
-        height: 150px;
-        width: 150px;
+        height: 200px;
+        width: 200px;
+        padding-right: 10px;
     }
 
     @include desktop{
@@ -56,15 +59,6 @@ select{
     background-color: #ffffff;
 }
 
-.articleimage{
-    width:100%;
-
-    @include tablet{
-        height: 250px;
-        
-    }
-}
-
 .article_section{
     display: flex;
     flex-wrap:wrap;
@@ -73,6 +67,9 @@ select{
 
 section{
     position: relative;
+    background-size: cover;
+    display: flex;
+    flex-wrap: wrap;
     height: 250px;
     width:100%;
     overflow: hidden;
@@ -85,12 +82,18 @@ section{
         width: 25%;
     }
 }
-.articleone{
-    display: flex;
-    flex-wrap: wrap;
-    width: 100%;
-}
 
+.articleone{
+    height: 400px;
+
+    @include tablet{
+        height: 400px;
+    }
+
+    @include desktop{
+        height: 400px;
+    }
+}
 .description{
     background-color:rgba(0, 0, 0, 0.596);
     position: absolute;
@@ -101,45 +104,52 @@ section{
 }
 
 .reduce{
-    animation: shrink-mobile 2s ease-in 1 both;
-    @include tablet{animation: shrink-tablet 1 both}
-    @include desktop{animation: shrink-desktop 1 both}
+    animation: shrinkmobile 1.5s ease-in both;
+    // animation: shrinktablet 1.5s both;
+    // animation: shrinkdesktop 1.5s both;
+   
+}
+.reduce{
+    animation: shrinktablet 1.5s both;
+}
+.reduce{
+animation: shrinkdesktop 1.5s both;
 }
 
-@keyframes shrink-mobile{
+@keyframes shrinkmobile{
     0%{transform:translateY(0px) scale(1);}
-    100%{transform: translateY(100px) scale(0.9);}
+    100%{transform: translateY(20px) scale(0.9);}
 }
 
-@keyframes shrink-tablet{
-    0%{transform:translateY(0px) scale(1);}
-    100%{transform: translate(-40px) scale(0.7);}
+@keyframes shrinktablet{
+    0%{transform:scale(1);}
+    100%{transform:translateY(220px) scale(0.7);}
 }
 
-@keyframes shrink-desktop{
-    0%{transform:translate(0px, 0px) scale(1);}
-    100%{transform: translate(-100px, -140px) scale(0.5);}
-}
+// @keyframes shrinkdesktop{
+//     0%{transform:translate(0px, 0px) scale(1);}
+//     100%{transform: translateY(-400px) scale(0.4);}
+// }
 
 .shift{
     animation: shift-mobile 2s both;
     @include tablet {animation: shift-tablet 2s both;}
-    @include desktop {animation: shift-desktop 2s both;}
+    @include desktop {animation: shift-desktop 1.5s both;}
  }
 
 @keyframes shift-mobile{
     0%{transform:translateY(0);}
-    100%{transform: translateY(-100px);}
+    100%{transform: translateY(-150px);}
 }
 
 @keyframes shift-tablet{
     0%{transform:translateY(0px);}
-    100%{transform: translateY(-10px);}
+    100%{transform: translateY(-500px);}
 }
 
 @keyframes shift-desktop{
     0%{transform:translateY(0px);}
-    100%{transform: translateY(-600px);}
+    100%{transform: translateY(-300px);}
 }
 
 footer {

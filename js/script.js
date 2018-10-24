@@ -23,13 +23,13 @@ $.ajax({
   var url = data.results[i].url;
   console.log(url);
   
-  $('.article_section').append('<section><a href="'+url+'"class="link"><img src="'+image+'" class="articleimage"></img><h2 class="description">'+abstract+'</h2></a></section>');
+  $('.article_section').append('<section class="articleone"><a href="'+url+'"class="link"><h2 class="description">'+abstract+'</h2></a></section>');
+  $('.articleone').last().css("background-image", 'url('+image+')');
 }
 
 }).fail(function(err) {
   throw err;
 });
 
-{/* <style>background-image:url("'+image+'") class="articleimage"</style> */}
 })
 
