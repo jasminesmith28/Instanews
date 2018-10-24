@@ -106,7 +106,7 @@ section{
 }
 
 @keyframes show{
-    0%{transform: translate(0px 100%);}
+    0%{transform: translateY(100%);}
 }
 
 .description{
@@ -118,6 +118,12 @@ section{
     font-weight: 100;
     overflow: hidden;
     display: none;
+}
+
+.gif{
+    width: 100px;
+    height: 100px;
+    display: flex;
 }
 
 .reduce{
@@ -163,7 +169,7 @@ section{
 }
 
 .shift{
-    animation: shift-mobile 2s both;
+    animation: shift-mobile 2s ease-in both;
     @include tablet {animation: shift-tablet 2s both;}
     @include desktop {animation: shift-desktop 1.5s both;}
  }

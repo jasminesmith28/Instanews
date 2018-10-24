@@ -450,13 +450,13 @@ section {
 
 @-webkit-keyframes show {
   0% {
-    -webkit-transform: translate(0px 100%);
-            transform: translate(0px 100%); } }
+    -webkit-transform: translateY(100%);
+            transform: translateY(100%); } }
 
 @keyframes show {
   0% {
-    -webkit-transform: translate(0px 100%);
-            transform: translate(0px 100%); } }
+    -webkit-transform: translateY(100%);
+            transform: translateY(100%); } }
 
 .description {
   background-color: rgba(0, 0, 0, 0.596);
@@ -469,6 +469,13 @@ section {
   font-weight: 100;
   overflow: hidden;
   display: none; }
+
+.gif {
+  width: 100px;
+  height: 100px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex; }
 
 .reduce {
   -webkit-animation: shrinkmobile 1.5s ease-in both;
@@ -591,8 +598,8 @@ section {
             transform: translateY(220px) translateX(-170px) scale(0.9); } }
 
 .shift {
-  -webkit-animation: shift-mobile 2s both;
-          animation: shift-mobile 2s both; }
+  -webkit-animation: shift-mobile 2s ease-in both;
+          animation: shift-mobile 2s ease-in both; }
   @media (min-width: 600px) {
     .shift {
       -webkit-animation: shift-tablet 2s both;

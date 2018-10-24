@@ -11,6 +11,7 @@
 $('.logo').addClass("reduce");
 $('.selection').addClass("slide");
 $('body').addClass("shift");
+$(".article_section").append('<img id="loader-img" alt="" src="./assets/images/ajax-loader.gif" class="gif"/>');
 
 $.ajax({
   url: url,
@@ -30,6 +31,7 @@ $.ajax({
 }).fail(function(err) {
   throw err;
 });
+
 
 })
 
