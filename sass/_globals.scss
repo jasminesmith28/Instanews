@@ -55,10 +55,6 @@ header{
     }
 }
 
-select{
-    background-color: #ffffff;
-}
-
 .article_section{
     display: flex;
     flex-wrap:wrap;
@@ -108,6 +104,7 @@ section{
 @keyframes show{
     0%{transform: translate(0px 100%);}
 }
+
 .description{
     background-color:rgba(0, 0, 0, 0.596);
     position: absolute;
@@ -119,34 +116,26 @@ section{
     display: none;
 }
 
-
 .reduce{
     animation: shrinkmobile 1.5s ease-in both;
-    // animation: shrinktablet 1.5s both;
-    // animation: shrinkdesktop 1.5s both;
-   
-}
-.reduce{
-    animation: shrinktablet 1.5s both;
-}
-.reduce{
-animation: shrinkdesktop 1.5s both;
+    @include tablet {animation: shrinktablet 1.5s both;}
+    @include desktop {animation: shrinkdesktop 1.5s both;}
 }
 
 @keyframes shrinkmobile{
-    0%{transform:translateY(0px) scale(1);}
-    100%{transform: translateY(20px) scale(0.9);}
+    0% {transform: translateY(0px) translateX(0px) scale(1);}
+    100%{transform: translateY(70px) scale(0.9);}
 }
 
 @keyframes shrinktablet{
-    0%{transform:scale(1);}
+    0% {transform: translateY(0px) translateX(0px) scale(1);}
     100%{transform:translateY(220px) scale(0.7);}
 }
 
-// @keyframes shrinkdesktop{
-//     0%{transform:translate(0px, 0px) scale(1);}
-//     100%{transform: translateY(-400px) scale(0.4);}
-// }
+@keyframes shrinkdesktop{
+    0% {transform: translateY(0px) translateX(0px) scale(1);}
+    100%{transform: translateY(210px) translateX(-300px) scale(0.6);}
+}
 
 .shift{
     animation: shift-mobile 2s both;
@@ -155,18 +144,15 @@ animation: shrinkdesktop 1.5s both;
  }
 
 @keyframes shift-mobile{
-    0%{transform:translateY(0);}
-    100%{transform: translateY(-150px);}
+    100%{transform: translateY(-200px);}
 }
 
 @keyframes shift-tablet{
-    0%{transform:translateY(0px);}
-    100%{transform: translateY(-500px);}
+    100%{transform: translateY(-450px);}
 }
 
 @keyframes shift-desktop{
-    0%{transform:translateY(0px);}
-    100%{transform: translateY(-300px);}
+    100%{transform: translateY(-450px);}
 }
 
 footer {
