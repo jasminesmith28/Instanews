@@ -23,7 +23,7 @@ $.ajax({
   var url = data.results[i].url;
   
 
-  $('.article_section').append('<a href="'+url+'"><section class="articleone"><h2 class="description">'+abstract+'</h2></section></a>');
+  $('.article_section').append('<a target="_blank" href="'+url+'"><section class="articleone"><h2 class="description">'+abstract+'</h2></section></a>');
   $('.articleone').last().css("background-image", 'url('+image+')');
 }
 
