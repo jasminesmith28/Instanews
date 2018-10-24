@@ -15,15 +15,15 @@ HTML, Sass, CSS animations, Gulp, Javascript, jQuery, Ajax.
 
 # Mobile
 
-<img src="/Users/jasminesmith/Documents/red/instanews/assets/images/mobile.png">
+<img src="./assets/images/mobile.png">
 
 # Tablet
 
-<img src="/Users/jasminesmith/Documents/red/instanews/assets/images/tablet.png">
+<img src="./assets/images/tablet.png">
 
 # Desktop
 
-<img src="/Users/jasminesmith/Documents/red/instanews/assets/images/desktop.png">
+<img src="./assets/images/desktop.png">
 
 ## Website Link
 
