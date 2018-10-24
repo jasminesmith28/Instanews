@@ -422,7 +422,6 @@ section {
   display: flex;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
-  height: 250px;
   width: 100%;
   overflow: hidden; }
   @media (min-width: 600px) {
