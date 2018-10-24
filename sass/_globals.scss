@@ -85,23 +85,40 @@ section{
 
 .articleone{
     height: 400px;
+    width: 100vw;
+
+    &:hover{
+        h2{
+        display: block;
+         animation: show 0.5s linear 1;   
+        }
+    }
 
     @include tablet{
         height: 400px;
+        width: 33vw;
     }
 
     @include desktop{
         height: 400px;
+        width: 25vw;
     }
+}
+
+@keyframes show{
+    0%{transform: translate(0px 100%);}
 }
 .description{
     background-color:rgba(0, 0, 0, 0.596);
     position: absolute;
     bottom: 0;
     margin: 0;
-    @include font($main-color, 12px, $font-type);
+    @include font($main-color, 16px, $font-type);
     font-weight: 100;
+    overflow: hidden;
+    display: none;
 }
+
 
 .reduce{
     animation: shrinkmobile 1.5s ease-in both;

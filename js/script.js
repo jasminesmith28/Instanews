@@ -1,5 +1,7 @@
   
   $('select').on('change', function(){
+
+
     var section = $('select').val();
     var url = "https://api.nytimes.com/svc/topstories/v2/"+section +".json";
     url += '?' + $.param({
@@ -9,6 +11,7 @@
   
 $('header').toggleClass("reduce");
 $('body').toggleClass("shift");
+$('.articleone').addClass('showDescription');
 
 $.ajax({
   url: url,
@@ -23,7 +26,8 @@ $.ajax({
   var url = data.results[i].url;
   console.log(url);
   
-  $('.article_section').append('<section class="articleone"><a href="'+url+'"class="link"><h2 class="description">'+abstract+'</h2></a></section>');
+
+  $('.article_section').append('<a href="'+url+'"><section class="articleone"><h2 class="description">'+abstract+'</h2></section></a>');
   $('.articleone').last().css("background-image", 'url('+image+')');
 }
 
