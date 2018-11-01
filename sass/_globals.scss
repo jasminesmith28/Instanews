@@ -1,204 +1,253 @@
-body{
-    background-color: black;
-    height: 100vh;
+body {
+  background-color: black;
+  height: 100vh;
 }
 
-p{
-    @include font($main-color, 16px, $font-type);
+p {
+  @include font($main-color, 16px, $font-type);
 }
 
-header{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    height: 100%;
-    width: 100%;
+header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  height: 100%;
+  width: 100%;
 
-    @include tablet{
+  @include tablet {
     flex-direction: row;
-    }
+  }
 
-    @include desktop{
+  @include desktop {
     flex-direction: row;
     justify-content: flex-start;
     align-items: center;
+  }
+
+  .logo {
+    height: 150px;
+    width: 150px;
+
+    @include tablet {
+      height: 200px;
+      width: 200px;
+      padding-right: 10px;
     }
 
-    .logo{
-        height: 150px;
-        width: 150px;
-
-    @include tablet{
-        height: 200px;
-        width: 200px;
-        padding-right: 10px;
+    @include desktop {
+      height: 250px;
+      width: 250px;
     }
-
-    @include desktop{
-        height: 250px;
-        width: 250px;
-    }
-    }   
+  }
 }
 
-select{
-    background-color: white;
-}
-.selection{
-    @include font($main-color, 14px, $font-type);
-
-    @include tablet{
-        display: flex;
-        flex-direction: column;
-    }
-
-    @include desktop{
-        padding-left: 4%;
-    }
+select {
+  background-color: white;
 }
 
-.article_section{
+.selection {
+  @include font($main-color, 14px, $font-type);
+
+  @include tablet {
     display: flex;
-    flex-wrap:wrap;
-    width: 100%;
+    flex-direction: column;
+  }
+
+  @include desktop {
+    padding-left: 4%;
+  }
 }
 
-section{
-    position: relative;
-    background-size: cover;
-    display: flex;
-    flex-wrap: wrap;
-    width:100%;
-    overflow: hidden;
-
-    @include tablet{
-        width: 33%;
-    }
-
-    @include desktop{
-        width: 25%;
-    }
+.article_section {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
 }
 
-.articleone{
+section {
+  position: relative;
+  background-size: cover;
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  overflow: hidden;
+
+  @include tablet {
+    width: 33%;
+  }
+
+  @include desktop {
+    width: 25%;
+  }
+}
+
+.articleone {
+  height: 400px;
+  width: 100vw;
+
+  &:hover {
+    h2 {
+      display: block;
+      animation: show 0.5s linear 1;
+    }
+  }
+
+  @include tablet {
     height: 400px;
-    width: 100vw;
+    width: 33vw;
+  }
 
-    &:hover{
-        h2{
-        display: block;
-         animation: show 0.5s linear 1;   
-        }
-    }
-
-    @include tablet{
-        height: 400px;
-        width: 33vw;
-    }
-
-    @include desktop{
-        height: 400px;
-        width: 25vw;
-    }
+  @include desktop {
+    height: 400px;
+    width: 25vw;
+  }
 }
 
-@keyframes show{
-    0%{transform: translateY(100%);}
+@keyframes show {
+  0% {
+    transform: translateY(100%);
+  }
 }
 
-.description{
-    background-color:rgba(0, 0, 0, 0.596);
-    position: absolute;
-    bottom: 0;
-    margin: 0;
-    @include font($main-color, 16px, $font-type);
-    font-weight: 100;
-    overflow: hidden;
-    display: none;
+.description {
+  background-color: rgba(0, 0, 0, 0.596);
+  position: absolute;
+  bottom: 0;
+  margin: 0;
+  @include font($main-color, 16px, $font-type);
+  font-weight: 100;
+  overflow: hidden;
+  display: none;
 }
 
-.gif{
-    width: 100px;
-    height: 100px;
-    display: flex;
+.gif {
+  width: 100px;
+  height: 100px;
+  display: flex;
 }
 
-.reduce{
-    animation: shrinkmobile 1.5s ease-in both;
-    @include tablet {animation: shrinktablet 1.5s both;}
-    @include desktop {animation: shrinkdesktop 1.5s both;}
+.reduce {
+  animation: shrinkmobile 1.5s ease-in both;
+  @include tablet {
+    animation: shrinktablet 1.5s both;
+  }
+  @include desktop {
+    animation: shrinkdesktop 1.5s both;
+  }
 }
 
-@keyframes shrinkmobile{
-    0% {transform: translate(0px) scale(1);}
-    100%{transform: translateY(120px) scale(0.9);}
+@keyframes shrinkmobile {
+  0% {
+    transform: translate(0px) scale(1);
+  }
+  100% {
+    transform: translateY(120px) scale(0.9);
+  }
 }
 
-@keyframes shrinktablet{
-    0% {transform: translate(0px) scale(1);}
-    100%{transform:translateY(250px) scale(0.4);}
+@keyframes shrinktablet {
+  0% {
+    transform: translate(0px) scale(1);
+  }
+  100% {
+    transform: translateY(250px) scale(0.4);
+  }
 }
 
-@keyframes shrinkdesktop{
-    0% {transform: translateY(0px) translateX(0px) scale(1);}
-    100%{transform: translateY(220px) translateX(-60px) scale(0.5);}
+@keyframes shrinkdesktop {
+  0% {
+    transform: translateY(0px) translateX(0px) scale(1);
+  }
+  100% {
+    transform: translateY(220px) translateX(-60px) scale(0.5);
+  }
 }
 
-.slide{
-    animation: slidemobile 1.5s ease-in both;
-    @include tablet {animation: slidetablet 1.5s both;}
-    @include desktop {animation: slidedesktop 1.5s both;}
+.slide {
+  animation: slidemobile 1.5s ease-in both;
+  @include tablet {
+    animation: slidetablet 1.5s both;
+  }
+  @include desktop {
+    animation: slidedesktop 1.5s both;
+  }
 }
 
-@keyframes slidemobile{
-    0% {transform: translateY(0px) translateX(0px);}
-    100%{transform: translateY(100px);}
+@keyframes slidemobile {
+  0% {
+    transform: translateY(0px) translateX(0px);
+  }
+  100% {
+    transform: translateY(100px);
+  }
 }
 
-@keyframes slidetablet{
-    0% {transform: translate(0px);}
-    100%{transform:translateY(250px) translateX(-40px) scale(0.9);}
+@keyframes slidetablet {
+  0% {
+    transform: translate(0px);
+  }
+  100% {
+    transform: translateY(250px) translateX(-40px) scale(0.9);
+  }
 }
 
-@keyframes slidedesktop{
-    0% {transform: translate(0px) scale(1);}
-    100%{transform: translateY(220px) translateX(-170px) scale(0.9);}
+@keyframes slidedesktop {
+  0% {
+    transform: translate(0px) scale(1);
+  }
+  100% {
+    transform: translateY(220px) translateX(-170px) scale(0.9);
+  }
 }
 
-.shift{
-    animation: shift-mobile 2s ease-in both;
-    @include tablet {animation: shift-tablet 2s both;}
-    @include desktop {animation: shift-desktop 1.5s both;}
- }
-
-@keyframes shift-mobile{
-    0% {transform: translate(0px);}
-    100%{transform: translateY(-150px);}
+.shift {
+  animation: shift-mobile 2s ease-in both;
+  @include tablet {
+    animation: shift-tablet 2s both;
+  }
+  @include desktop {
+    animation: shift-desktop 1.5s both;
+  }
 }
 
-@keyframes shift-tablet{
-    0% {transform: translate(0px);}
-    100%{transform: translateY(-500px);}
+@keyframes shift-mobile {
+  0% {
+    transform: translate(0px);
+  }
+  100% {
+    transform: translateY(-150px);
+  }
 }
 
-@keyframes shift-desktop{
-    100%{transform: translateY(-450px);}
+@keyframes shift-tablet {
+  0% {
+    transform: translate(0px);
+  }
+  100% {
+    transform: translateY(-500px);
+  }
+}
+
+@keyframes shift-desktop {
+  100% {
+    transform: translateY(-450px);
+  }
 }
 
 footer {
+  display: flex;
+  justify-content: center;
+
+  @include desktop {
+    justify-content: flex-start;
+    padding-left: 2%;
+  }
+
+  p {
+    @include font($footer-color, 16px, $font-type);
     display: flex;
-    justify-content: center;
-
-    @include desktop{
-        justify-content: flex-start;
-        padding-left: 2%;
-    }
-
-    p{
-        @include font($footer-color, 16px, $font-type);
-        display: flex;
-        align-self: flex-end;
-    }
+    align-self: flex-end;
+  }
 }
