@@ -25,6 +25,3 @@ HTML, Sass, CSS animations, Gulp, Javascript, jQuery, Ajax.
 
 <img src="./assets/images/desktop.png">
 
-## Website Link
-
-https://jasminesmith28.github.io/Instanews/
